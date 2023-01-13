@@ -6,7 +6,8 @@ interface QrReaderProps {
     className?: string
     disabled?: boolean
     scanDelay?: number
-    onResult?: (result?: Result, error?: Error) => void
+    onResult?: (result?: Result, error?: Error) => void,
+    mediaTrackConstraints?: MediaTrackConstraints
 }
 
 export default function QrReader({
@@ -14,6 +15,11 @@ export default function QrReader({
     disabled = false,
     scanDelay = 500,
     onResult = () => { },
+    mediaTrackConstraints = {
+        facingMode: {
+            ideal: "environment"
+        }
+    }
 }: QrReaderProps) {
     const videoId = useId()
 
@@ -35,9 +41,7 @@ export default function QrReader({
             readerRef.current
                 ?.decodeFromConstraints(
                     {
-                        video: {
-                            facingMode: 'user',
-                        },
+                        video: mediaTrackConstraints,
                     },
                     videoId,
                     (result, error) => {
