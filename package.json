@@ -1,5 +1,6 @@
 {
     "name": "@jengkhaw95/react-qr-scan",
+    "description": "A react library used to scan QR code using device's camera.",
     "private": false,
     "version": "0.1.7",
     "type": "module",
