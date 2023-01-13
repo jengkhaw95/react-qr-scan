@@ -48,5 +48,12 @@
     },
     "repository": {
         "url": "https://github.com/jengkhaw95/react-qr-scan"
-    }
+    },
+    "keywords": [
+        "react",
+        "qrcode scan",
+        "qrcode scanner",
+        "qr scan",
+        "qr scanner"
+    ]
 }
