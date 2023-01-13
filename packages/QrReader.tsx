@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useId, useRef } from 'react'
 import { BrowserQRCodeReader, IScannerControls } from '@zxing/browser'
 import type { Result } from '@zxing/library'
