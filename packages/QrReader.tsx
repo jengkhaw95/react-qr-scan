@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { useEffect, useId, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { BrowserQRCodeReader, IScannerControls } from '@zxing/browser'
 import type { Result } from '@zxing/library'
 
@@ -8,7 +8,7 @@ interface QrReaderProps {
     className?: string
     disabled?: boolean
     scanDelay?: number
-    onResult?: (result?: Result, error?: Error) => void,
+    onResult?: (result?: Result, error?: Error) => void
     mediaTrackConstraints?: MediaTrackConstraints
 }
 
@@ -16,17 +16,16 @@ export default function QrReader({
     className = '',
     disabled = false,
     scanDelay = 500,
-    onResult = () => { },
+    onResult = () => {},
     mediaTrackConstraints = {
         facingMode: {
-            ideal: "environment"
-        }
-    }
+            ideal: 'environment',
+        },
+    },
 }: QrReaderProps) {
-    const videoId = useId()
-
     const controlRef = useRef<IScannerControls | null>(null)
     const readerRef = useRef<BrowserQRCodeReader | null>(null)
+    const videoElementRef = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
         readerRef.current = new BrowserQRCodeReader(undefined, {
@@ -45,7 +44,7 @@ export default function QrReader({
                     {
                         video: mediaTrackConstraints,
                     },
-                    videoId,
+                    videoElementRef.current ?? undefined,
                     (result, error) => {
                         onResult(result, error)
                     }
@@ -64,7 +63,7 @@ export default function QrReader({
 
     return (
         <section className={className}>
-            <video id={videoId}></video>
+            <video ref={videoElementRef}></video>
         </section>
     )
 }
