@@ -15,7 +15,10 @@ jobs:
               with:
                   node-version: '16.x'
                   registry-url: 'https://registry.npmjs.org'
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 6.0.2
             - run: pnpm ci
             - run: pnpm publish
               env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN  }}
