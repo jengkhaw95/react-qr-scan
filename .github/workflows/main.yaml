@@ -6,29 +6,16 @@ on:
             - main
 
 jobs:
-    build-and-publish:
+    build:
         runs-on: ubuntu-latest
-
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
+            - uses: actions/checkout@v3
+            # Setup .npmrc file to publish to npm
+            - uses: actions/setup-node@v3
               with:
-                  node-version: '14.x'
-
-            - name: Install dependencies
-              run: pnpm install
-
-            - name: Build package
-              run: pnpm build
-
-            - name: Publish package
-              uses: pnpm/action-publish@v1
-              with:
-                  access: 'public' # Set to 'private' for a private package
-                  registry: 'https://registry.npmjs.org/' # Set to your registry URL if publishing to a private registry
-                  tag: 'latest' # Set the tag to publish the package under
+                  node-version: '16.x'
+                  registry-url: 'https://registry.npmjs.org'
+            - run: npm ci
+            - run: npm publish
               env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # Set the NPM authentication token as a secret in your repository settings
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
