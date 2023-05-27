@@ -15,7 +15,8 @@
         "prebuild": "rimraf dist",
         "build": "pnpm run prebuild && rollup -c",
         "preview": "vite preview",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "ci": "pnpm install --frozen-lockfile"
     },
     "dependencies": {
         "@zxing/browser": "^0.1.1",
