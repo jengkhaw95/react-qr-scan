@@ -1,61 +1,61 @@
 {
-    "name": "@jengkhaw95/react-qr-scan",
-    "description": "A react library used to scan QR code using device's camera.",
-    "private": false,
-    "version": "0.2.1",
-    "type": "module",
-    "files": [
-        "dist",
-        "package.json"
-    ],
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
-    "scripts": {
-        "dev": "vite",
-        "prebuild": "rimraf dist",
-        "build": "pnpm run prebuild && rollup -c",
-        "preview": "vite preview",
-        "format": "prettier --write ."
-    },
-    "dependencies": {
-        "@zxing/browser": "^0.1.1",
-        "@zxing/library": "^0.19.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "peerDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "devDependencies": {
-        "@rollup/plugin-commonjs": "^24.0.0",
-        "@rollup/plugin-node-resolve": "^15.0.1",
-        "@rollup/plugin-terser": "^0.3.0",
-        "@rollup/plugin-typescript": "^11.0.0",
-        "@types/react": "^18.0.26",
-        "@types/react-dom": "^18.0.9",
-        "@vitejs/plugin-react": "^3.0.0",
-        "prettier": "^2.8.2",
-        "rimraf": "^4.0.4",
-        "rollup": "^3.10.0",
-        "rollup-plugin-dts": "^5.1.1",
-        "rollup-plugin-typescript2": "^0.34.1",
-        "typescript": "^4.9.3",
-        "vite": "^4.0.0"
-    },
-    "license": "MIT",
-    "author": {
-        "name": "Jeng Khaw",
-        "email": "jengkhaw95@gmail.com"
-    },
-    "repository": {
-        "url": "https://github.com/jengkhaw95/react-qr-scan"
-    },
-    "keywords": [
-        "react",
-        "qrcode scan",
-        "qrcode scanner",
-        "qr scan",
-        "qr scanner"
-    ]
+  "name": "@jengkhaw95/react-qr-scan",
+  "description": "A react library used to scan QR code using device's camera.",
+  "private": false,
+  "version": "0.2.1",
+  "type": "module",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "rimraf dist",
+    "build": "pnpm run prebuild && rollup -c",
+    "preview": "vite preview",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@zxing/browser": "^0.1.1",
+    "@zxing/library": "^0.19.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.3.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^3.0.0",
+    "prettier": "^2.8.2",
+    "rimraf": "^4.0.4",
+    "rollup": "^3.10.0",
+    "rollup-plugin-dts": "^5.1.1",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jeng Khaw",
+    "email": "jengkhaw95@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/jengkhaw95/react-qr-scan"
+  },
+  "keywords": [
+    "react",
+    "qrcode scan",
+    "qrcode scanner",
+    "qr scan",
+    "qr scanner"
+  ]
 }
